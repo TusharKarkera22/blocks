@@ -14,10 +14,11 @@
 
     // Utility Functions
     function updateSensorDisplay(data) {
+        console.log("Updating Display with Data:", data);
         nitrogenValue.textContent = data.nitrogen || '--';
         phosphorusValue.textContent = data.phosphorus || '--';
         potassiumValue.textContent = data.potassium || '--';
-        
+
         var timestamp = new Date().toLocaleString();
         lastUpdatedElement.textContent = timestamp;
     }
@@ -30,6 +31,7 @@
     }
 
     function fetchNPKData() {
+        statusDisplay.textContent = "Loading Data...";
         fetch("https://firebase-4j9i.onrender.com/get-npk")
             .then(response => {
                 if (!response.ok) {
@@ -38,6 +40,7 @@
                 return response.json();
             })
             .then(data => {
+                console.log("API Response:", data);
                 if (data && data.status === "success") {
                     updateSensorDisplay(data.data);
                     statusDisplay.textContent = "Data Loaded Successfully";
@@ -91,8 +94,8 @@
     // Connection and Visibility Event Listeners
     window.addEventListener('online', handleConnectionStatus);
     window.addEventListener('offline', handleConnectionStatus);
-    
-    document.addEventListener('visibilitychange', function() {
+
+    document.addEventListener('visibilitychange', function () {
         if (!document.hidden) {
             fetchNPKData();
         }
