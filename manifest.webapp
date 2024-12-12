@@ -32,6 +32,6 @@
       "description": "Send notifications for critical NPK data changes"
     }
   },
-  "type": "privileged",
+  "type": "",
   "cursor": true
 }
