@@ -1,0 +1,68 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#main {
+    padding: 15px;
+}
+
+.sensor-data {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.sensor-item {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sensor-item label {
+    font-weight: bold;
+    color: #333;
+}
+
+.sensor-value {
+    font-size: 18px;
+    color: #2c3e50;
+    min-width: 100px;
+    text-align: right;
+}
+
+#connection-status {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-buttons button {
+    flex-grow: 1;
+    margin: 0 5px;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+footer button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+}

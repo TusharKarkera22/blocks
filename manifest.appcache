@@ -1,0 +1,30 @@
+CACHE MANIFEST
+# Version 0.1.0
+
+# Core App Resources
+index.html
+style.css
+js/app.js
+js/firebase-config.js
+
+# Firebase Libraries
+https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js
+https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js
+
+# Images (if any)
+images/logo16.png
+images/logo32.png
+images/logo48.png
+images/logo60.png
+images/logo64.png
+images/logo90.png
+images/logo120.png
+images/logo128.png
+
+# Fallback and Network Resources
+NETWORK:
+*
+
+FALLBACK:
+/ fallback.html
+/index.html offline.html

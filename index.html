@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/headers.css">
+    <link rel="stylesheet" type="text/css" href="css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="css/toolbars.css">
+    <title>NPK Data Viewer</title>
+    <base target="_blank">
+</head>
+
+<body>
+    <section role="region">
+        <header>
+            <div id="online-status" title="Online Status"></div>
+            <menu type="toolbar">
+                <button id="refresh"><span class="icon icon-refresh">Refresh</span></button>
+            </menu>
+            <h1>NPK Sensor Data</h1>
+        </header>
+    </section>
+
+    <div id="main">
+        <h2>Current NPK Readings</h2>
+
+        <div class="sensor-data">
+            <div class="sensor-item">
+                <label>Nitrogen (N)</label>
+                <div id="nitrogen-value" class="sensor-value">--</div>
+            </div>
+
+            <div class="sensor-item">
+                <label>Phosphorus (P)</label>
+                <div id="phosphorus-value" class="sensor-value">--</div>
+            </div>
+
+            <div class="sensor-item">
+                <label>Potassium (K)</label>
+                <div id="potassium-value" class="sensor-value">--</div>
+            </div>
+
+            <div class="sensor-item">
+                <label>Last Updated</label>
+                <div id="last-updated" class="sensor-value">--</div>
+            </div>
+        </div>
+
+        <div id="connection-status">
+            <h3>Connection</h3>
+            <div id="status-display">Connecting...</div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="check-connection">Check Connection</button>
+            <button id="add-notification">Set Alerts</button>
+        </div>
+    </div>
+
+    <footer>
+        <div role="toolbar">
+            <ul>
+                <li><button id="reload" class="update">Reload Data</button></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Firebase Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- App Scripts -->
+    <script type="text/javascript" src="js/firebase-config.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/webapp.js"></script>
+    
+    <script type="text/javascript" src="js/offline.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "name": "NPK Data Viewer",
+  "launch_path": "/index.html",
+  "description": "Real-time NPK (Nitrogen, Phosphorus, Potassium) Sensor Data Viewer",
+  "icons": {
+    "16": "/images/logo16.png",
+    "32": "/images/logo32.png",
+    "48": "/images/logo48.png",
+    "60": "/images/logo60.png",
+    "64": "/images/logo64.png",
+    "90": "/images/logo90.png",
+    "120": "/images/logo120.png",
+    "128": "/images/logo128.png"
+  },
+  "developer": {
+    "name": "Agriculture Tech Team",
+    "url": "https://example.com/npk-data-viewer"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+    "systemXHR": {
+      "description": "Allow internet connectivity for Firebase data retrieval"
+    },
+    "internet": {
+      "description": "Required to fetch real-time NPK sensor data"
+    },
+    "desktop-notification": {
+      "description": "Send notifications for critical NPK data changes"
+    }
+  },
+  "type": "privileged",
+  "cursor": true
+}
