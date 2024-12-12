@@ -31,28 +31,29 @@
     }
 
     function fetchNPKData() {
-        statusDisplay.textContent = "Loading Data...";
-        fetch("https://firebase-4j9i.onrender.com/get-npk")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://firebase-4j9i.onrender.com/get-npk", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                try {
+                    var data = JSON.parse(xhr.responseText);
+                    if (data && data.status === "success") {
+                        updateSensorDisplay(data.data);
+                        statusDisplay.textContent = "Data Loaded Successfully";
+                    } else {
+                        statusDisplay.textContent = "No Data Available";
+                    }
+                } catch (e) {
+                    console.error("Error parsing JSON response:", e);
+                    statusDisplay.textContent = "Error Loading Data";
                 }
-                return response.json();
-            })
-            .then(data => {
-                console.log("API Response:", data);
-                if (data && data.status === "success") {
-                    updateSensorDisplay(data.data);
-                    statusDisplay.textContent = "Data Loaded Successfully";
-                } else {
-                    statusDisplay.textContent = "No Data Available";
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching data:", error);
+            } else if (xhr.readyState === 4) {
                 statusDisplay.textContent = "Error Loading Data";
-            });
+            }
+        };
+        xhr.send();
     }
+    
 
     // Notifications
     function setupNotifications() {
